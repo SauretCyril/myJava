@@ -57,12 +57,15 @@ public class HelloWorld {
         int value = myArray[0];
         for (int i = 0; i < myArray.length; i++) {
             System.out.println(myArray[i]);
-            if (myArray[i] < 0 && myArray[i] > value) {
+
+            if (myArray[i] <= 0 && myArray[i] > value) {
                 value = myArray[i];
-            } else if (myArray[i] > 0 && myArray[i] < value) {
+            } else if (myArray[i] >= 0 && myArray[i] < value) {
                 value = myArray[i];
             }
-
+            if (myArray[i] == 0) {
+                break;
+            }
         }
         return value;
     }
